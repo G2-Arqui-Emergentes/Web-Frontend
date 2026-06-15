@@ -1,12 +1,14 @@
 <script>
 import TeamMembersService from "@/services/team-members.service.js";
+import taskmasterLogo from "@/assets/taskmaster-logo.svg?url";
 
 export default {
   name: "toolbar",
   data() {
     return {
       members: 0,
-      teamMemberService: new TeamMembersService()
+      teamMemberService: new TeamMembersService(),
+      logoUrl: taskmasterLogo
     }
   },
   props: {
@@ -84,7 +86,7 @@ export default {
         <div class="flex flex-row align-items-center gap-3">
           <img
               class="block h-3rem w-4rem"
-              src="../assets/taskmaster-logo.svg"
+              :src="logoUrl"
               alt="TaskMaster"
               style="filter: brightness(0) saturate(100%) invert(18%) sepia(98%) saturate(4425%) hue-rotate(348deg) brightness(94%) contrast(98%);"
           />
