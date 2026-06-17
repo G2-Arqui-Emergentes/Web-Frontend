@@ -1,5 +1,6 @@
 <script>
 import { RegisterService } from '@/services/register.service';
+import taskmasterLogo from "@/assets/taskmaster-logo.svg?url";
 
 export default {
   name: "signup-content",
@@ -26,7 +27,8 @@ export default {
         confirmPassword: '',
         role: '',
       },
-      success_message: 'Your account has been created successfully!'
+      success_message: 'Your account has been created successfully!',
+      logoUrl: taskmasterLogo
     }
   },
   methods: {
@@ -74,7 +76,7 @@ export default {
 <template>
   <div class="signup-container min-h-screen flex">
     <div class="logo-container flex">
-      <img src="../../assets/taskmaster-logo.svg" alt="logo" style="width: 100px; height: auto; filter: brightness(0) saturate(100%) invert(18%) sepia(98%) saturate(4425%) hue-rotate(348deg) brightness(94%) contrast(98%);" />
+      <img :src="logoUrl" alt="logo" style="width: 100px; height: auto; filter: brightness(0) saturate(100%) invert(18%) sepia(98%) saturate(4425%) hue-rotate(348deg) brightness(94%) contrast(98%);" />
       <span class="font-bold text-4xl">TaskMaster</span>
     </div>
     <div class="card flex">
